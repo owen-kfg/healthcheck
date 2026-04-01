@@ -15,7 +15,6 @@ db_query() {
 db_init() {
     mkdir -p "$DATA_DIR"
     sqlite3 "$DB_PATH" <<'SQL' >/dev/null
-PRAGMA journal_mode=WAL;
 PRAGMA foreign_keys=ON;
 
 CREATE TABLE IF NOT EXISTS checks (
